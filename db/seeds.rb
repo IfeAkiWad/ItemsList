@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Create items with names
+Item.create(name: "Apple")
+Item.create(name: "Banana")
+Item.create(name: "Orange")
+
