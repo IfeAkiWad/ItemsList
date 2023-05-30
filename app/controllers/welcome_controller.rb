@@ -3,3 +3,4 @@ class WelcomeController < ApplicationController
     @welcome_message = "Welcome to the Item List App!"
   end
 end
+   
