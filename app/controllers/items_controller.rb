@@ -9,7 +9,13 @@ class ItemsController < ApplicationController
     @item = Item.new
 
   def create
-    @items = Item.new(item_params)
+    @item = Item.new(item_params)
+
+    if @item.save
+      redirect_to @item, notice: "Hell yea!"
+    else
+      render :new
+    end
   end
 
   def show
@@ -19,15 +25,22 @@ class ItemsController < ApplicationController
   end
 
   def update
+    if @item.update(item_params)
+      redirect_to @item, notice: "Done!"
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @item.destroy
+    redirect_to items_index_path, notice: "GONE!"
   end
 
   private
 
   def set_item
-    @item = Item.find_by_id(params[:id])
+    @item = Item.find(params[:id])
   end
 
   def item_params
