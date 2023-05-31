@@ -1,0 +1,6 @@
+<h1>Add A Fruit!<h1>
+
+<%=form_with(model: @user, url:items_path, method: :post) do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+<%end%>
