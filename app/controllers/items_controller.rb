@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to items_index_path, notice: "GONE!"
+    redirect_to items_path, notice: "GONE!"
   end
 
   private
