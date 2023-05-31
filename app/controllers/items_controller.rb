@@ -10,10 +10,10 @@ class ItemsController < ApplicationController
   end
 
   def create
+    byebug    
     @item = Item.new(item_params)
-
     if @item.save
-      redirect_to items_path, notice: "Hell yea!"
+      redirect_to items_path(@item), notice: "Hell yea!"
     else
       render :new
     end
@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to items_path, notice: "Done!"
+      redirect_to items_path(@item), notice: "Done!"
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to items_path, notice: "GONE!"
+    redirect_to items_path(@item), notice: "GONE!"
   end
 
   private
