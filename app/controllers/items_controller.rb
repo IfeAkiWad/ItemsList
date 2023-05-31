@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to @item, notice: "Done!"
+      redirect_to items_path, notice: "Done!"
     else
       render :edit
     end
