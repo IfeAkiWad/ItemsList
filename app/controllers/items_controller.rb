@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    byebug    
+    # byebug    
     @item = Item.new(item_params)
     if @item.save
       redirect_to items_path(@item), notice: "Hell yea!"
