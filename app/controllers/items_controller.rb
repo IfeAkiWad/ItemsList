@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
 
     if @item.save
-      redirect_to @item, notice: "Hell yea!"
+      redirect_to items_path, notice: "Hell yea!"
     else
       render :new
     end
